@@ -1,0 +1,135 @@
+
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.container {
+  display: flex;
+  margin: 107px 134px 0;
+}
+.info {
+  width: 40%;
+}
+.title {
+  font-size: 27px;
+  color: #e3b873;
+  width: 400px;
+  text-transform: uppercase;
+}
+.description {
+  font-family: Nunito Sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 26.73px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+.info_list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 79px;
+}
+.info_list_item {
+  width: 50%;
+}
+.info_title {
+  font-family: Yeseva One;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24.95px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #e3b873;
+}
+.info_message {
+  display: inline-block;
+  width: 50%;
+
+  font-family: Nunito Sans;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 21.28px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+.slider__dots {
+  display: flex;
+  justify-content: center;
+}
+
+.slider__dots-item {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.4s ease;
+}
+
+.slider__dots-item:hover,
+.slider__dots-item.active {
+  background: rgb(66, 64, 64)
+}
+
+.media {
+  width: 60%;
+}
+
+.navigation {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.link.active {
+  padding-bottom: 7px;
+  border-bottom: 1px solid #e3b873;
+}
+.link {
+  display: inline-block;
+  text-decoration: none;
+  color: #e3b873;
+}
+.slider__images{
+  padding-top: 45px;
+
+}
+.slider__images .image {
+  display: none;
+  background-size: cover;
+  background-position: left;
+  width: 100%;
+  height: 482px;
+}
+
+.slider__images .image.active {
+  display: block;
+}
+.slider__arrows {
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  gap: 30px;
+}
+
+.slider__arrow {
+  width: 41px;
+  height: 13px;
+  cursor: pointer;
+}
+
+.slider__arrow:hover {
+  opacity: 1;
+}
