@@ -1,12 +1,24 @@
 const images = [
   {
     url: "./img/MaskGroup(1).png",
+    city: "Rostov-on-Don LCD admiral",
+    area: "81 m2",
+    time: "3.5 months",
+    cost: "Upon request",
   },
   {
     url: "./img/MaskGroup(2).png",
+    city: "Sochi Thieves",
+    area: "105 m2",
+    time: "4 months",
+    cost: "Upon request",
   },
   {
     url: "./img/MaskGroup(3).png",
+    city: "Rostov-on-Don Patriotic",
+    area: "93 m2",
+    time: "3 months",
+    cost: "Upon request",
   },
 ];
 let curNumber = 0;
@@ -14,6 +26,10 @@ const sliderWrapper = document.querySelector(".media");
 const sliderImages = sliderWrapper.querySelector(".slider__images");
 const sliderDots = document.querySelector(".slider__dots");
 const links = document.querySelectorAll(".link");
+const city = document.querySelector(".city");
+const area = document.querySelector(".area");
+const time = document.querySelector(".time");
+const cost = document.querySelector(".cost");
 
 function initImages() {
   images.forEach((image, index) => {
@@ -60,6 +76,8 @@ function moveSlider(num) {
   sliderImages.querySelector(".active").classList.remove("active"); //
   sliderImages.querySelector(`.n${num}`).classList.add("active");
   handleLinks(num);
+  handleText(num);
+  handleDots(num);
 }
 
 initArrows();
@@ -73,7 +91,7 @@ function initDots() {
   });
   sliderDots.querySelectorAll(".slider__dots-item").forEach((dotsArr) => {
     dotsArr.addEventListener("click", function () {
-      moveSlider(this.dataset.index);
+      moveSlider(+this.dataset.index);
     });
   });
 }
@@ -87,3 +105,24 @@ function handleLinks(number) {
     }
   });
 }
+
+function handleText(number) {
+  images.forEach((image, index) => {
+    if (number === index) {
+      city.textContent = image.city;
+      area.textContent = image.area;
+      time.textContent = image.time;
+      cost.textContent = image.cost;
+    }
+  });
+}
+
+function handleDots(num) {
+  sliderDots.querySelectorAll(".slider__dots-item").forEach((dot, index) => {
+    dot.classList.remove("active");
+    if (num === index) {
+      dot.classList.add("active");
+    }
+  });
+}
+
